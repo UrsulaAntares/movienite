@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  heart: 1
+  star: 1
+  user_id: 1
+  movie_id: 1
+
+two:
+  heart: 1
+  star: 1
+  user_id: 1
+  movie_id: 1

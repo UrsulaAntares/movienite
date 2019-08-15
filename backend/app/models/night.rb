@@ -1,0 +1,2 @@
+class Night < ApplicationRecord
+end
