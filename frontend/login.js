@@ -1,3 +1,5 @@
+USER_URL = `http://localhost:3000/users`
+LOGIN_URL = `http://localhost:3000/login`
 document.addEventListener('DOMContentLoaded', function(e){
     renderLoginPage()
     tweakLoginPage()
@@ -64,7 +66,16 @@ function tweakLoginPage(){
     
 }
 
+// This is going to be a post request to a sessions controller that creates a user session
 function validateUser(e, form){
     let username = form[0].value
+
+    fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: {'Content-Type':'application/json', 'Accept':'application/json'}, 
+        body: JSON.stringify(username)
+    })
+
+
 
 }
