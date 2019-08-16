@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
         user = User.find_by(username: params["_json"])
         if user
             # cookies[:user_id] = user.id
-            render json: user
+            render json: {simple_user_data: user, movies: user.movies, movie_nights: user.nights}
         end 
     end 
 
