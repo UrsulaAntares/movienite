@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function(e){
+    renderLoginForm()
+    tweakLoginForm()
 
-    renderLogin()
-    tweakLogin()
 
 
 
 
 })
 
-function renderLogin(){
+function renderLoginForm(){
     const main = document.getElementById('main')
 
     main.innerHTML = `<div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
@@ -49,6 +49,15 @@ function renderLogin(){
     
 }
 
-function tweakLogin(){
-    debugger
+function tweakLoginForm(){
+    let loginTitle = document.getElementsByClassName("uk-card-title uk-text-center")[0]
+        loginTitle.innerText = "Welcome to Movie Night! <LOGO HERE>"
+
+    let inputPassword = document.getElementsByClassName('uk-input uk-form-large')[1]
+        inputPassword.disabled = true
+        inputPassword.placeholder = "No Password Required"
+    
+    let usernameInputIcon = document.getElementsByTagName('span')[0]
+        
+    
 }
