@@ -3,10 +3,10 @@ function getMoviesToRate(main, user) {
     console.log("successfully got to next page")
     main.innerHTML = ""
     movieContainer = document.createElement("div")
-    myMoviesLink.addEventListener('click', (e) => renderMovies(e, user))
+    myMoviesLink.addEventListener('click', (e) => renderMovies(e, user, movieContainer))
     fetch("http://localhost:3000/movies")
     .then(res => res.json())
-    .then(movieArray =>  showMovie(movieArray[0], user, movieContainer) ) 
+    .then(movieArray =>  showMovie(movieArray[0], user, movieContainer) ) // WHY is this only sending in one arr
     //this needs logic to know what movies the user has NOT rated 
     main.append(movieContainer)
     // Movie.all
