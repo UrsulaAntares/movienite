@@ -11,7 +11,9 @@ function getMoviesToRate(main, user) {
 
     fetch("http://localhost:3000/movies")
     .then(res => res.json())
-    .then(movieArray =>  showMovie(movieArray[0], user, movieContainer) ) 
+    .then(allMovies => allmovies.select(movie => movie.interests.forEach(user_id != user.simple_user_data.id) ) )
+    //Ursula is having hard time on line 14 selecting by movies that have interests with user -- two levels
+    .then(unratedMovies =>  showMovie(unratedMovies[0], user, movieContainer) ) 
     //this needs logic to know what movies the user has NOT rated 
     main.append(movieContainer)
     // Movie.all
@@ -37,8 +39,8 @@ function showMovie(movie, user, movieRatingDiv) {
     hearts.type = "range"
     stars.name = "stars"
     hearts.name = "hearts"
-    stars.value = "5"
-    hearts.value = "5"
+    stars.value = "50"
+    hearts.value = "50"
     submitButton.type = "submit"
     submitButton.addEventListener("click", event => createInterest(movie, user, stars.value, hearts.value, movieContainer))
     //after running the createInterest, should replace movie in the movie container with a new movie, unrated
