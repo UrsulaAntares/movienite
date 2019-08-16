@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function(e){
-    renderLoginForm()
-    tweakLoginForm()
+    renderLoginPage()
+    tweakLoginPage()
+    let form = document.getElementsByTagName('form')[0]
+    form.addEventListener('submit', (e) => validateUser(e, form))
 
 
 
@@ -8,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function(e){
 
 })
 
-function renderLoginForm(){
+function renderLoginPage(){
     const main = document.getElementById('main')
 
     main.innerHTML = `<div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
@@ -49,7 +51,7 @@ function renderLoginForm(){
     
 }
 
-function tweakLoginForm(){
+function tweakLoginPage(){
     let loginTitle = document.getElementsByClassName("uk-card-title uk-text-center")[0]
         loginTitle.innerText = "Welcome to Movie Night! <LOGO HERE>"
 
@@ -60,4 +62,9 @@ function tweakLoginForm(){
     let usernameInputIcon = document.getElementsByTagName('span')[0]
         
     
+}
+
+function validateUser(e, form){
+    let username = form[0].value
+
 }
