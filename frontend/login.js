@@ -1,16 +1,9 @@
-USER_URL = `http://localhost:3000/users`
-LOGIN_URL = `http://localhost:3000/login`
-const main = document.getElementById('main')
+
 document.addEventListener('DOMContentLoaded', function(e){
     renderLoginPage(main)
     tweakLoginPage()
-    let form = document.getElementsByTagName('form')[0]
+    let form = document.getElementsByTagName('form')[1]
     form.addEventListener('submit', (e) => validateUser(e, form, main))
-	
-	
-	
-	
-	
 })
 
 function renderLoginPage(main){

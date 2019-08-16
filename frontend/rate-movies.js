@@ -1,14 +1,9 @@
-// document.addEventListener("DOMContentLoaded", event => {
-//     console.log("accessed rate movies")
-//     const main = document.getElementById("main")
-//     getMoviesToRate(main)
-// })
 
 function getMoviesToRate(main, user) {
     console.log("successfully got to next page")
     main.innerHTML = ""
     movieContainer = document.createElement("div")
-
+    myMoviesLink.addEventListener('click', (e) => renderMovies(e, user))
     fetch("http://localhost:3000/movies")
     .then(res => res.json())
     .then(allMovies => allmovies.select(movie => movie.interests.forEach(user_id != user.simple_user_data.id) ) )
