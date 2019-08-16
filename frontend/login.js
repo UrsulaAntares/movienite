@@ -1,19 +1,19 @@
 USER_URL = `http://localhost:3000/users`
 LOGIN_URL = `http://localhost:3000/login`
+const main = document.getElementById('main')
 document.addEventListener('DOMContentLoaded', function(e){
-    renderLoginPage()
+    renderLoginPage(main)
     tweakLoginPage()
     let form = document.getElementsByTagName('form')[0]
-    form.addEventListener('submit', (e) => validateUser(e, form))
-
-
-
-
-
+    form.addEventListener('submit', (e) => validateUser(e, form, main))
+	
+	
+	
+	
+	
 })
 
-function renderLoginPage(){
-    const main = document.getElementById('main')
+function renderLoginPage(main){
 
     main.innerHTML = `<div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
 	<div class="uk-width-1-1">
@@ -67,14 +67,14 @@ function tweakLoginPage(){
 }
 
 // This is going to be a post request to a sessions controller that creates a user session
-function validateUser(e, form){
+function validateUser(e, form, main){
     let username = form[0].value
-
+	e.preventDefault()
     fetch("http://localhost:3000/login", {
         method: "POST",
         headers: {'Content-Type':'application/json', 'Accept':'application/json'}, 
         body: JSON.stringify(username)
-    }).then(r => r.json()).then(user => {debugger})
+    }).then(r => r.json()).then(user => {getMoviesToRate(main, user)})
 
 
 
