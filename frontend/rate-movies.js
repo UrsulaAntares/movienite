@@ -3,7 +3,11 @@ function getMoviesToRate(main, user) {
     console.log("successfully got to next page")
     main.innerHTML = ""
     movieContainer = document.createElement("div")
+
+
     myMoviesLink.addEventListener('click', (e) => renderMovies(e, user, movieContainer))
+    createMovieNightLink.addEventListener('click', (e) => movieNight(e, user))
+
     fetch("http://localhost:3000/movies")
     .then(res => res.json())
     .then(movieArray =>  showMovie(movieArray[0], user, movieContainer) ) // WHY is this only sending in one arr
