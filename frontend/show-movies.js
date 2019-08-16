@@ -1,6 +1,14 @@
 
 // This will be a show page for the current_user's information
 function renderMovies(e, user, container){
-    // i want this function to arrange the pictures of the films in a nice way on the page
-    debugger
+    main.innerHTML = " "    
+let holder = document.createElement('container')
+    holder.classList.add('.uk-container-large')
+    holder.innerHTML = `<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+    <h3 class="uk-card-title">Default</h3>
+    <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</div>
+`
+main.appendChild(holder)
+
 }
