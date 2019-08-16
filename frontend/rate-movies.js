@@ -3,7 +3,11 @@ function getMoviesToRate(main, user) {
     console.log("successfully got to next page")
     main.innerHTML = ""
     movieContainer = document.createElement("div")
-    myMoviesLink.addEventListener('click', (e) => renderMovies(e, user))
+
+
+    myMoviesLink.addEventListener('click', (e) => renderMovies(e, user, movieContainer))
+    createMovieNightLink.addEventListener('click', (e) => movieNight(e, user))
+
     fetch("http://localhost:3000/movies")
     .then(res => res.json())
     .then(allMovies => allMovies.select(movie => movie.interests.forEach(user_id != user.simple_user_data.id) ) )

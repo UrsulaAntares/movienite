@@ -3,7 +3,11 @@ document.addEventListener('DOMContentLoaded', function(e){
     renderLoginPage(main)
     tweakLoginPage()
     let form = document.getElementsByTagName('form')[1]
-    form.addEventListener('submit', (e) => validateUser(e, form, main))
+		form.addEventListener('submit', (e) => validateUser(e, form, main))
+	
+		
+	
+	
 })
 
 function renderLoginPage(main){
