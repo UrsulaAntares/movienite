@@ -74,7 +74,7 @@ function validateUser(e, form){
         method: "POST",
         headers: {'Content-Type':'application/json', 'Accept':'application/json'}, 
         body: JSON.stringify(username)
-    }).then(r => r.json()).then(user => {debugger})
+    }).then(r => r.json()).then(user => {})
 
 
 
