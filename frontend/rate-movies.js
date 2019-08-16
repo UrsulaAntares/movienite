@@ -1,14 +1,9 @@
-// document.addEventListener("DOMContentLoaded", event => {
-//     console.log("accessed rate movies")
-//     const main = document.getElementById("main")
-//     getMoviesToRate(main)
-// })
 
 function getMoviesToRate(main, user) {
     console.log("successfully got to next page")
     main.innerHTML = ""
     movieContainer = document.createElement("div")
-    debugger
+    myMoviesLink.addEventListener('click', (e) => renderMovies(e, user))
     fetch("http://localhost:3000/movies")
     .then(res => res.json())
     .then(movieArray =>  showMovie(movieArray[0], user, movieContainer) ) 
