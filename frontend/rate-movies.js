@@ -8,7 +8,7 @@ function getMoviesToRate(main) {
     console.log("successfully got to next page")
     main.innerHTML = ""
     movieContainer = document.createElement("div")
-
+    
     fetch("http://localhost:3000/movies", {
         headers: {
             'Access-Control-Allow-Origin': '*'

@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function(e){
     renderLoginPage(main)
     tweakLoginPage()
     let form = document.getElementsByTagName('form')[0]
+    let myMoviesLink = document.getElementById('movies_link')
+    myMoviesLink.addEventListener('click', (e) => renderMovies(e, user))
     form.addEventListener('submit', (e) => validateUser(e, form, main))
 	
 	
