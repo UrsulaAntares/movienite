@@ -6,7 +6,7 @@ function getMoviesToRate(main, user) {
     myMoviesLink.addEventListener('click', (e) => renderMovies(e, user))
     fetch("http://localhost:3000/movies")
     .then(res => res.json())
-    .then(allMovies => allmovies.select(movie => movie.interests.forEach(user_id != user.simple_user_data.id) ) )
+    .then(allMovies => allMovies.select(movie => movie.interests.forEach(user_id != user.simple_user_data.id) ) )
     //Ursula is having hard time on line 14 selecting by movies that have interests with user -- two levels
     .then(unratedMovies =>  showMovie(unratedMovies[0], user, movieContainer) ) 
     //this needs logic to know what movies the user has NOT rated 
