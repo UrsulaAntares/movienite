@@ -1,10 +1,18 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'rest-client'
+require 'json'
+require 'pry'
+
+API_BASE_URL="https://api.themoviedb.org/3/trending/all/day?api_key=d58a8cfa0b1932711fc5fc8dda7ee621"
+
+def get_movies()
+    response = RestClient.get(API_BASE_URL)
+    json = JSON.parse(response.body)
+    json.map do |movie|
+        {
+            
+        } 
+end
+
 
 
 
