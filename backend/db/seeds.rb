@@ -29,4 +29,6 @@ API_BASE_URL="https://api.themoviedb.org/3/trending/all/day?api_key=d58a8cfa0b19
 
 # 10.times  {Join.create([user: User.all.sample, night: Night.all.sample])}
 
+# 10.times  {Join.create([user: User.all.sample, night: Night.all.sample])}
 
+moremovies = Movie.create([ {title: "Birdman"}, {title: "It's a Wonderful Life"}, {title: "Best in Show"}]  )
