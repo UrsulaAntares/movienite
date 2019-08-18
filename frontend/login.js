@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function(e){
 
 function renderLoginPage(main){
 
-    main.innerHTML = `<div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
+    main.innerHTML = `<div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade uk-background-secondary" uk-height-viewport>
 	<div class="uk-width-1-1">
 		<div class="uk-container">
 			<div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
