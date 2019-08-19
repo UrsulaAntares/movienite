@@ -11,21 +11,20 @@ function getMoviesToRate(main, user) {
     fetch("http://localhost:3000/movies")
     .then(res => res.json())
     .then((allMovies) => compareMovies(current_user, allMovies))
-    //Ursula is having hard time on line 14 selecting by movies that have interests with user -- two levels
-    // .then(unratedMovies =>  showMovie(unratedMovies[0], user, movieContainer) ) 
-    //this needs logic to know what movies the user has NOT rated 
     main.append(movieContainer)
-    // Movie.all
     console.log("Hey, we ran the thing")
 }
 
-function showMovie(movie, user, movieRatingDiv) {
+function showMovie(movie, user, container) {
     const aMovie = document.createElement("div")
     const movieTitle = document.createElement("h1")
     const moviePic = document.createElement("img")
     moviePic.src= movie.image_url
+    moviePic.classList.add('movie-pic', 'thumbnail')
     movieTitle.innerText =  movie.title 
-    aMovie.append(movieTitle)
+    movieTitle.classList.add('uk-card-title')
+    aMovie.append(moviePic, movieTitle)
+    aMovie.classList.add('uk-card', 'uk-card-default', 'uk-card-body', 'uk-width-1-2@m')
     
     const movieRatingsContainer = document.createElement("div")
     const movieRatingForm = document.createElement("form")
@@ -38,15 +37,16 @@ function showMovie(movie, user, movieRatingDiv) {
     hearts.type = "range"
     stars.name = "stars"
     hearts.name = "hearts"
-    stars.value = "50"
-    hearts.value = "50"
+    // stars.value = "50"
+    // hearts.value = "50"
     submitButton.type = "submit"
     submitButton.addEventListener("click", event => createInterest(movie, user, stars.value, hearts.value, movieContainer))
     //after running the createInterest, should replace movie in the movie container with a new movie, unrated
 
     movieRatingForm.append(stars, hearts, submitButton)
     movieRatingsContainer.append(movieRatingForm)
-    movieContainer.append(aMovie, movieRatingsContainer)
+    aMovie.append(movieRatingsContainer)
+    container.append(aMovie)
 } 
 
 function createInterest(movie, user, stars, hearts) {
@@ -78,7 +78,7 @@ function compareMovies(user, allMovies){
         })
         .then(r => r.json())
         .then(data => {
-            debugger
+            // debugger
         })
 
 

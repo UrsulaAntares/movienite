@@ -1,0 +1,8 @@
+img.movie-pic {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    float:left;
+    margin: 0 20px 0 0; 
+    object-position: top;
+}
