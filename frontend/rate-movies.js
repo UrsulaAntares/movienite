@@ -43,14 +43,8 @@ function showMovie(movie, user, container, context) {
         let interest = movie.interests.filter(el => el.user_id == 1)[0]
         hearts.value = interest.heart
         stars.value =interest.star
-        // debugger
-
     }
-    //problem: whenever this function is called, it shows a default 50% value for stars and hearts 
-    // since it does not know about the existing instance in db of a user interest
-    //
-    // stars.value = "50"
-    // hearts.value = "50"
+   
     submitButton.type = "submit"
     submitButton.addEventListener("click", event => createInterest(movie, user, stars.value, hearts.value, context))
     //after running the createInterest, should replace movie in the movie container with a new movie, unrated
@@ -64,10 +58,8 @@ function showMovie(movie, user, container, context) {
 
 function createInterest(movie, user, stars, hearts, context) {
     event.preventDefault()
-    // stars = document.getElementById("rating-form").stars.value
-    // hearts = document.getElementById("rating-form").hearts.value
-    // debugger
-    data = {movie_id: movie.id, user_id: user.id, 
+//    debugger
+    data = {movie_id: movie.id, user_id: user.simple_user_data.id, 
         star: stars, heart: hearts}
     fetch("http://localhost:3000/interests", {
         method: "POST",
