@@ -5,8 +5,8 @@ function getMoviesToRate(main, user) {
     movieContainer = document.createElement("div")
 
     let current_user = user
-    myMoviesLink.addEventListener('click', (e) => renderMovies(e, user, movieContainer))
-    createMovieNightLink.addEventListener('click', (e) => movieNight(e, user, movieContainer))
+    // myMoviesLink.addEventListener('click', (e) => renderMovies(e, user, movieContainer))
+    // createMovieNightLink.addEventListener('click', (e) => movieNight(e, user, movieContainer))
 
     fetch("http://localhost:3000/movies")
     .then(res => res.json())
@@ -15,8 +15,9 @@ function getMoviesToRate(main, user) {
     console.log("Hey, we ran the thing")
 }
 
-function showMovie(movie, user, container, context) {
-    main.innerHTML = ''
+function showMovie(movie, user, context) {
+    // main.innerHTML = ''
+
     const aMovie = document.createElement("div")
     const movieTitle = document.createElement("h1")
     const moviePic = document.createElement("img")
@@ -52,13 +53,13 @@ function showMovie(movie, user, container, context) {
     movieRatingForm.append(stars, hearts, submitButton)
     movieRatingsContainer.append(movieRatingForm)
     aMovie.append(movieRatingsContainer)
-    container.append(aMovie)
-    main.append(container)
+    // container.append(aMovie)
+    main.append(aMovie)
 } 
 
 function createInterest(movie, user, stars, hearts, context) {
     event.preventDefault()
-//    debugger
+
     data = {movie_id: movie.id, user_id: parseInt(window.localStorage.current_user_id), 
         star: stars, heart: hearts}
     fetch("http://localhost:3000/interests", {
@@ -85,7 +86,7 @@ function compareMovies(user, allMovies){
         })
         .then(r => r.json())
         .then(unratedMovies => {
-            showMovie(unratedMovies[0], user, movieContainer, context)
+            showMovie(unratedMovies[0], user,  context)
         })
     
 }

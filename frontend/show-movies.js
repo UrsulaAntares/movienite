@@ -1,12 +1,18 @@
 
 // This will be a show page for the current_user's information
-function renderMovies(e, user, container){
+function renderMovies(e, user){
     let context; 
     let current_user_id = window.localStorage.getItem('current_user_id')
-    container.innerText =  " "
+    main.innerHTML =  " " 
+
     fetch(`http://localhost:3000/users/${current_user_id}`)
         .then(r => r.json())
-        .then(user => user.movies.forEach(movie => showMovie(movie, user, container, context)))
+        .then(user => {
+            console.log("Fetch is finished")
+            user.movies.forEach(movie => {
 
+                showMovie(movie, user, context)
+            })
+        })
 }
 
