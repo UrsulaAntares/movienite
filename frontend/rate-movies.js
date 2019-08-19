@@ -59,7 +59,7 @@ function showMovie(movie, user, container, context) {
 function createInterest(movie, user, stars, hearts, context) {
     event.preventDefault()
 //    debugger
-    data = {movie_id: movie.id, user_id: user.simple_user_data.id, 
+    data = {movie_id: movie.id, user_id: parseInt(window.localStorage.current_user_id), 
         star: stars, heart: hearts}
     fetch("http://localhost:3000/interests", {
         method: "POST",
