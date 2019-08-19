@@ -8,7 +8,9 @@
 #     def to_serialized_json
 #         @user.to_json(:include => {
 #         :interests => {:only => [:user_id, :heart, :star, :movie_id]},
-#         :movies, :nights}, :except => [:created_at, :updated_at]
+#         :movies, 
+#         :nights}, 
+#         :except => [:created_at, :updated_at]
 #         )  
 #     end
 
