@@ -32,7 +32,6 @@ function movieNight(e, user, movieContainer){
 </div>
 </div>`
 let context = "frontPage-rating"
-myMoviesLink.addEventListener('click', (e) => renderMovies(e, user, movieContainer, context))
 
 let users_list = document.getElementById('users_list')
 

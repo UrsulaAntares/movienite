@@ -4,8 +4,9 @@ document.addEventListener('DOMContentLoaded', function(e){
     tweakLoginPage()
     let form = document.getElementsByTagName('form')[1] // change back to 1
 		form.addEventListener('submit', (e) => validateUser(e, form, main))
-		
-	
+		// debugger
+	// myMoviesLink.addEventListener('click', (e) => renderMovies(e, user, movieContainer))
+	// createMovieNightLink.addEventListener('click', (e) => movieNight(e, user, movieContainer))
 	
 })
 
@@ -75,6 +76,11 @@ function validateUser(e, form, main){
         body: JSON.stringify(username)
     }).then(r => r.json()).then(user => {
 		
+		
+		myMoviesLink.addEventListener('click', (e) => renderMovies(e, user))
+		createMovieNightLink.addEventListener('click', (e) => movieNight(e, user))
+		//these used to take in movieContainer but that's not useful here -- can be created/passed elsewhere
+
 		window.localStorage.setItem('current_user_id', user.simple_user_data.id);
 		window.localStorage.setItem('current_username', user.simple_user_data.username);
 		getMoviesToRate(main, user)})
