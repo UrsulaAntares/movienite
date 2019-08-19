@@ -78,7 +78,7 @@ function compareMovies(user, allMovies){
         })
         .then(r => r.json())
         .then(data => {
-            debugger
+            console.log('ho')
         })
 
 
