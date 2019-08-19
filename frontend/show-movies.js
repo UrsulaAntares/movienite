@@ -1,6 +1,6 @@
 
 // This will be a show page for the current_user's information
-function renderMovies(e, user, container){
+function renderMovies(e, container){
     main.innerHTML = " "    
 let holder = document.createElement('container')
     holder.classList.add('.uk-container-large')

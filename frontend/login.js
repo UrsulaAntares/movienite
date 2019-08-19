@@ -71,7 +71,10 @@ function validateUser(e, form, main){
         method: "POST",
         headers: {'Content-Type':'application/json', 'Accept':'application/json'}, 
         body: JSON.stringify(username)
-    }).then(r => r.json()).then(user => {getMoviesToRate(main, user)})
+    }).then(r => r.json()).then(user => {
+		window.localStorage.setItem('current_user_id', user.simple_user_data.id);
+		window.localStorage.setItem('current_username', user.simple_user_data.username);
+		getMoviesToRate(main, user)})
 
 
 

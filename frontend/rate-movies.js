@@ -4,15 +4,15 @@ function getMoviesToRate(main, user) {
     main.innerHTML = ""
     movieContainer = document.createElement("div")
 
-
-    myMoviesLink.addEventListener('click', (e) => renderMovies(e, user, movieContainer))
-    createMovieNightLink.addEventListener('click', (e) => movieNight(e, user))
+    let current_user = user
+    myMoviesLink.addEventListener('click', (e) => renderMovies(e, current_user, movieContainer))
+    createMovieNightLink.addEventListener('click', (e) => movieNight(e, current_user))
 
     fetch("http://localhost:3000/movies")
     .then(res => res.json())
-    .then(allMovies => {debugger})
+    .then((allMovies) => compareMovies(current_user, allMovies))
     //Ursula is having hard time on line 14 selecting by movies that have interests with user -- two levels
-    .then(unratedMovies =>  showMovie(unratedMovies[0], user, movieContainer) ) 
+    // .then(unratedMovies =>  showMovie(unratedMovies[0], user, movieContainer) ) 
     //this needs logic to know what movies the user has NOT rated 
     main.append(movieContainer)
     // Movie.all
@@ -66,4 +66,19 @@ function createInterest(movie, user, stars, hearts) {
     .then(res => console.log(res))
     console.log("you tried to rate a movie")
 
+}
+
+function compareMovies(user, allMovies){
+    let Obj = []
+    let currentUserId = parseInt(window.localStorage.getItem('current_user_id'))
+    
+    allMovies.forEach((movie) => {
+        movie.interests.forEach((interest) => {
+            if(interest.user_id !== currentUserId){
+                Obj.push(movie)
+            }
+        })
+    })
+    let final = new Set(Obj);
+    debugger
 }
