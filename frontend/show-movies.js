@@ -1,6 +1,8 @@
 
 // This will be a show page for the current_user's information
 function renderMovies(e, user, container){
+    
+    main.innerHTML = ''
     let context; 
     let current_user_id = window.localStorage.getItem('current_user_id')
 

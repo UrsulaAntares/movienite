@@ -16,7 +16,6 @@ function getMoviesToRate(main, user) {
 }
 
 function showMovie(movie, user, container, context) {
-    main.innerHTML = ''
     const aMovie = document.createElement("div")
     const movieTitle = document.createElement("h1")
     const moviePic = document.createElement("img")
@@ -52,6 +51,7 @@ function showMovie(movie, user, container, context) {
 } 
 
 function createInterest(movie, user, stars, hearts, context) {
+    main.innerHTML = ''
     event.preventDefault()
     // stars = document.getElementById("rating-form").stars.value
     // hearts = document.getElementById("rating-form").hearts.value

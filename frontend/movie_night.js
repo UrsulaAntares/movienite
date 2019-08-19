@@ -16,14 +16,15 @@ function movieNight(e, user, movieContainer){
         </div>
     </div>
     <div class="uk-card-body">
-    <form>
-        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-        <label><input class="uk-checkbox" type="checkbox" checked> A</label>
-        <label><input class="uk-checkbox" type="checkbox"> B</label>
-        <label<=><input type="submit"></label>
+    <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+    
+    <form class="uk-search uk-search-default" id="add_user">
+        <input class="uk-search-input" type="search" placeholder="Add Friend...">
+        <input type="submit">
     </form>
+    
     </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+        <p id="users_list">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
     </div>
     <div class="uk-card-footer uk-card-primary">
         <a href="#" class="uk-button uk-button-text">Click here to see your Movie!</a>
@@ -33,5 +34,22 @@ function movieNight(e, user, movieContainer){
 let context = "frontPage-rating"
 myMoviesLink.addEventListener('click', (e) => renderMovies(e, user, movieContainer, context))
 
+let users_list = document.getElementById('users_list')
 
+let userForm = document.getElementById('add_user')
+    userForm.addEventListener('submit', (e) => addUser(e, user, users_list))
+
+
+
+
+}
+
+function addUser(e, user, users_list){
+    let creator_id = window.localStorage.getItem('current_user_id')
+    let added_user_username = window.localStorage.getItem('current_user_id')
+    
+
+
+
+    debugger
 }
