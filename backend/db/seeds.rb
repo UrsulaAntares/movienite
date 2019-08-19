@@ -17,9 +17,7 @@ Movie.destroy_all
 Interest.destroy_all
 Night.destroy_all
 100.times do 
-
-Movie.create(genre: Faker::Book.genre, length: Faker::Number.between(from: 1, to: 200), title: Faker::Movie.quote, image_url: "https://google.com")
-
+    Movie.create(genre: Faker::Book.genre, length: Faker::Number.between(from: 1, to: 200), title: Faker::Movie.quote, image_url: "https://images-na.ssl-images-amazon.com/images/I/71MQQvOk73L._SY879_.jpg")
 end 
 # genre, length , title, imageurl
 
@@ -27,7 +25,7 @@ end
 # users = User.create([{name: "Ursula", username: "Urs"}, {name: "Kolton", username: "KStarr"},{name: "Frank", username: "frank"},{name: "Angela", username: "Angie"}])
 # nights = Night.create([{name:"We have a projector"}, {name: "We have a couch"}, {name: "Matt's movie night"}])
 
-40.times  {Interest.create(heart: rand(0..5), star: rand(0..5), user_id: User.all.sample.id, movie_id: Movie.all.sample.id ) }
+40.times  {Interest.create(heart: rand(0..100), star: rand(0..100), user_id: User.all.sample.id, movie_id: Movie.all.sample.id ) }
 
 # 10.times  {Join.create([user: User.all.sample, night: Night.all.sample])}
 

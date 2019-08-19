@@ -1,4 +1,4 @@
-function movieNight(e){
+function movieNight(e, user, movieContainer){
     main.innerHTML = " "
     main.innerHTML = `
     <div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade uk-background-secondary" uk-height-viewport>
@@ -23,5 +23,7 @@ function movieNight(e){
     </div>
 </div>
 </div>`
+myMoviesLink.addEventListener('click', (e) => renderMovies(e, user, movieContainer))
+
 
 }
