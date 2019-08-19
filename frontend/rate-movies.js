@@ -69,19 +69,24 @@ function createInterest(movie, user, stars, hearts) {
 }
 
 function compareMovies(user, allMovies){
-    let Obj = []
     let currentUserId = parseInt(window.localStorage.getItem('current_user_id'))
+        
+        fetch('http://localhost:3000/filter', {
+            method: "POST", 
+            headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+            body: JSON.stringify({user: user})
+        })
+        .then(r => r.json())
+        .then(data => {
+            debugger
+        })
+
+
+
+
     
-    allMovies.forEach((movie) => {
-        if(user.movies.includes(movie)){
-            debugger
-        }else{
-            Obj.push(movie)
-            debugger
-        }
-    })
     // let final = new Set(Obj);
-    debugger
+    
     
     
     
