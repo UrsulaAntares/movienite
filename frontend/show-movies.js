@@ -1,7 +1,7 @@
 
 // This will be a show page for the current_user's information
 function renderMovies(e, user, container){
-    let context = "frontPage-rating"
+    let context; 
     let current_user_id = window.localStorage.getItem('current_user_id')
 
     fetch(`http://localhost:3000/users/${current_user_id}`)

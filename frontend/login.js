@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function(e){
     renderLoginPage(main)
     tweakLoginPage()
-    let form = document.getElementsByTagName('form')[1]
+    let form = document.getElementsByTagName('form')[1] // change back to 1
 		form.addEventListener('submit', (e) => validateUser(e, form, main))
 		
 	
@@ -57,7 +57,9 @@ function tweakLoginPage(){
         inputPassword.disabled = true
         inputPassword.placeholder = "No Password Required"
     
-    let usernameInputIcon = document.getElementsByTagName('span')[0]
+	let usernameInputIcon = document.getElementsByTagName('span')[0]
+	// let nav = document.getElementsByTagName('header')[0]
+	// nav.innerHTML = ''
         
     
 }
@@ -66,6 +68,7 @@ function tweakLoginPage(){
 function validateUser(e, form, main){
     let username = form[0].value
 	e.preventDefault()
+	
     fetch("http://localhost:3000/login", {
         method: "POST",
         headers: {'Content-Type':'application/json', 'Accept':'application/json'}, 
