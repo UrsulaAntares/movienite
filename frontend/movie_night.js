@@ -16,10 +16,17 @@ function movieNight(e, user, movieContainer){
         </div>
     </div>
     <div class="uk-card-body">
+    <form>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+        <label><input class="uk-checkbox" type="checkbox" checked> A</label>
+        <label><input class="uk-checkbox" type="checkbox"> B</label>
+        <label<=><input type="submit"></label>
+    </form>
+    </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
     </div>
-    <div class="uk-card-footer">
-        <a href="#" class="uk-button uk-button-text">Read more</a>
+    <div class="uk-card-footer uk-card-primary">
+        <a href="#" class="uk-button uk-button-text">Click here to see your Movie!</a>
     </div>
 </div>
 </div>`
