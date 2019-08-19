@@ -23,7 +23,8 @@ function movieNight(e, user, movieContainer){
     </div>
 </div>
 </div>`
-myMoviesLink.addEventListener('click', (e) => renderMovies(e, user, movieContainer))
+let context = "frontPage-rating"
+myMoviesLink.addEventListener('click', (e) => renderMovies(e, user, movieContainer, context))
 
 
 }

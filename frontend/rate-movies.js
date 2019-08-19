@@ -10,12 +10,12 @@ function getMoviesToRate(main, user) {
 
     fetch("http://localhost:3000/movies")
     .then(res => res.json())
-    .then((allMovies) => compareMovies(current_user, allMovies))
+    .then((allMovies) => compareMovies(current_user, allMovies, movieContainer))
     main.append(movieContainer)
     console.log("Hey, we ran the thing")
 }
 
-function showMovie(movie, user, container) {
+function showMovie(movie, user, container, context) {
     main.innerHTML = ''
     const aMovie = document.createElement("div")
     const movieTitle = document.createElement("h1")
@@ -41,7 +41,7 @@ function showMovie(movie, user, container) {
     // stars.value = "50"
     // hearts.value = "50"
     submitButton.type = "submit"
-    submitButton.addEventListener("click", event => createInterest(movie, user, stars.value, hearts.value, container))
+    submitButton.addEventListener("click", event => createInterest(movie, user, stars.value, hearts.value, context))
     //after running the createInterest, should replace movie in the movie container with a new movie, unrated
 
     movieRatingForm.append(stars, hearts, submitButton)
@@ -51,7 +51,7 @@ function showMovie(movie, user, container) {
     main.append(container)
 } 
 
-function createInterest(movie, user, stars, hearts) {
+function createInterest(movie, user, stars, hearts, context) {
     event.preventDefault()
     // stars = document.getElementById("rating-form").stars.value
     // hearts = document.getElementById("rating-form").hearts.value
@@ -66,12 +66,14 @@ function createInterest(movie, user, stars, hearts) {
         body: JSON.stringify(data)
     }).then(res => res.json())
     .then(res => console.log(res))
+    if (context == "frontPage-rating") {getMoviesToRate(main, user)}
     console.log("you tried to rate a movie")
-
+    
 }
 
 function compareMovies(user, allMovies){
     let currentUserId = parseInt(window.localStorage.getItem('current_user_id'))
+    let context = "frontPage-rating"
         
         fetch('http://localhost:3000/filter', {
             method: "POST", 
@@ -79,17 +81,8 @@ function compareMovies(user, allMovies){
             body: JSON.stringify({user: user})
         })
         .then(r => r.json())
-        .then(data => {
-            // debugger
+        .then(unratedMovies => {
+            showMovie(unratedMovies[0], user, movieContainer, context)
         })
-
-
-
-
-    
-    // let final = new Set(Obj);
-    
-    
-    
     
 }
