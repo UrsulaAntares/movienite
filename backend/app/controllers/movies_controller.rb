@@ -12,11 +12,8 @@ class MoviesController < ApplicationController
 
     def filter
         user = User.find(params[:user][:simple_user_data][:id].to_i)
-        filtered_movies = Movie.show_movies(user)
+        filtered_movies = Movie.filter_movies(user)
         render json: filtered_movies
-
-        
-
     end
 
 
