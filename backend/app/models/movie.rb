@@ -4,4 +4,15 @@ class Movie < ApplicationRecord
 
 
 
+    def self.show_movies(user_obj)
+        Movie.all.select do |movie_obj|
+            !user_obj.movies.include? movie_obj
+        end 
+
+    end 
+
+
+
+
+
 end
