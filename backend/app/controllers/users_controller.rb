@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
     def index 
-        byebug
         users = User.all 
         render json: users 
     end 
@@ -11,8 +10,10 @@ class UsersController < ApplicationController
     end 
 
     def show 
-        user = User.find(params[:id])
-        render json: user
+        user = User.find(params[:id].to_i)
+        render json: user.to_json(:include => {:movies => {:only => [:genre, :id, :image_url, :interests, :length, :title]}
+        } :except => [:updated_at, :created_at])
+        # byebug
     end 
 
     def update 

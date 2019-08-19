@@ -13,12 +13,14 @@ API_BASE_URL="https://api.themoviedb.org/3/trending/all/day?api_key=d58a8cfa0b19
 #         } 
 # end
 
+Movie.destroy_all
+Interest.destroy_all
+Night.destroy_all
+100.times do 
 
-# 100.times do 
+Movie.create(genre: Faker::Book.genre, length: Faker::Number.between(from: 1, to: 200), title: Faker::Movie.quote, image_url: "https://google.com")
 
-# Movie.create(genre: Faker::Book.genre, length: Faker::Number.between(from: 1, to: 200), title: Faker::Movie.quote, image_url: "https://google.com")
-Interest.destroy_all 
-# end 
+end 
 # genre, length , title, imageurl
 
 # movies = Movie.create([ {title: "Mars Attacks!"}, {title: "Hudsucker Proxy"}]  )

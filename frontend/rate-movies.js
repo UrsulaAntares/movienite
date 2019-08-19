@@ -73,12 +73,16 @@ function compareMovies(user, allMovies){
     let currentUserId = parseInt(window.localStorage.getItem('current_user_id'))
     
     allMovies.forEach((movie) => {
-        movie.interests.forEach((interest) => {
-            if(interest.user_id !== currentUserId){
-                Obj.push(movie)
-            }
-        })
+        if(user.movies.includes(movie)){
+            debugger
+        }else{
+            Obj.push(movie)
+            debugger
+        }
     })
-    let final = new Set(Obj);
+    // let final = new Set(Obj);
     debugger
+    
+    
+    
 }
