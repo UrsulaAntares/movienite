@@ -7,9 +7,24 @@ class InterestsController < ApplicationController
 
 
     def create
-        interest = Interest.create(interest_params)
+        # byebug
+        # interest = Interest.create(interest_params)
+        interest = Interest.find_or_create_by(user_id: interest_params[:user_id], movie_id: interest_params[:movie_id])
+        interest.heart = interest_params[:heart]
+        interest.star = interest_params[:star]
+        interest.save
         render json: interest 
     end
+
+    # def edit
+    #     # byebug
+    #     # interest = Interest.create(interest_params)
+    #     interest = Interest.find_or_create_by(user_id: interest_params[:user_id], movie_id: interest_params[:movie_id])
+    #     interest.heart = params[:heart]
+    #     interest.star = params[:star]
+    #     # interest.save
+    #     render json: interest 
+    # end
 
     private
 

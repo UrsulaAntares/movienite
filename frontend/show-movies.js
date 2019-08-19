@@ -3,7 +3,7 @@
 function renderMovies(e, user, container){
     let context; 
     let current_user_id = window.localStorage.getItem('current_user_id')
-
+    container.innerText =  " "
     fetch(`http://localhost:3000/users/${current_user_id}`)
         .then(r => r.json())
         .then(user => user.movies.forEach(movie => showMovie(movie, user, container, context)))

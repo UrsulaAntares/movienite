@@ -38,6 +38,17 @@ function showMovie(movie, user, container, context) {
     hearts.type = "range"
     stars.name = "stars"
     hearts.name = "hearts"
+    if (context != "frontPage-rating") {
+        if (user.movies.includes(movie)){ console.log("Yes, this is one of our movies")}
+        let interest = movie.interests.filter(el => el.user_id == 1)[0]
+        hearts.value = interest.heart
+        stars.value =interest.star
+        // debugger
+
+    }
+    //problem: whenever this function is called, it shows a default 50% value for stars and hearts 
+    // since it does not know about the existing instance in db of a user interest
+    //
     // stars.value = "50"
     // hearts.value = "50"
     submitButton.type = "submit"
