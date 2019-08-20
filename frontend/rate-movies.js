@@ -42,7 +42,7 @@ function showMovie(movie, user, context) {
     hearts.name = "hearts"
     if (context != "frontPage-rating") {
         if (user.movies.includes(movie)){ console.log("Yes, this is one of our movies")}
-        let interest = movie.interests.filter(el => el.user_id == 1)[0]
+        let interest = movie.interests.filter(el => el.user_id == user.id)[0]
         hearts.value = interest.heart
         stars.value =interest.star
     }

@@ -16,6 +16,7 @@ API_BASE_URL="https://api.themoviedb.org/3/trending/all/day?api_key=d58a8cfa0b19
 Movie.destroy_all
 Interest.destroy_all
 Night.destroy_all
+Join.destroy_all
 100.times do 
     Movie.create(genre: Faker::Book.genre, length: Faker::Number.between(from: 1, to: 200), title: Faker::Movie.quote, image_url: "https://images-na.ssl-images-amazon.com/images/I/71MQQvOk73L._SY879_.jpg")
 end 
