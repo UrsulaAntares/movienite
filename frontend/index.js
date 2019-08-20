@@ -8,5 +8,6 @@ let goRateLink = document.getElementById('go_rate_link')
 let myMoviesLink = document.getElementById('movies_link')
 let createMovieNightLink = document.getElementById('night_link')
 let logicLink = document.getElementById('logic_link')
+let myNightsLink = document.getElementById('my_nights')
 
 

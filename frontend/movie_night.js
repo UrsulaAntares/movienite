@@ -16,6 +16,7 @@ function movieNight(e, user, movieContainer){
         </div>
     </div>
     <div class="uk-card-body">
+        <h4 id="subtitle">Tell us about your special night! </h4>
         <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
         
         <form class="uk-search uk-search-default" id="add_user">
@@ -87,11 +88,22 @@ function editPage(data, user, time){
                 headers: {'Content-Type':'application/json', 'Accept':'application/json'},
                 body: JSON.stringify({newFriend: newFriend, data: data})
             })
-            // .then(r => r.json()).then((data) => {debugger})
+            .then(r => r.json()).then((data) => {
+                let users_list = document.getElementById('users_list')
+                // debugger
+                    users_list.innerHTML = `<div class="uk-alert-primary" uk-alert>
+                    <a class="uk-alert-close" uk-close></a>
+                    <p>Congratulations! ${data.added_user.name} has been successfully added to your movie night!</p>
+                    </div>`
+                
+            })
         })
 
         let cardTitle = document.getElementsByTagName('h3')[0]
             cardTitle.innerText = `${data.night.name}`
+
+        let newTitle = document.getElementById('subtitle')
+            newTitle.innerText = "Add some friends to join the party!"
 
         
         
@@ -99,3 +111,4 @@ function editPage(data, user, time){
 
         // debugger
 }
+
