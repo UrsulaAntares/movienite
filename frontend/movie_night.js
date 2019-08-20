@@ -87,7 +87,15 @@ function editPage(data, user, time){
                 headers: {'Content-Type':'application/json', 'Accept':'application/json'},
                 body: JSON.stringify({newFriend: newFriend, data: data})
             })
-            // .then(r => r.json()).then((data) => {debugger})
+            .then(r => r.json()).then((data) => {
+                let users_list = document.getElementById('users_list')
+                // debugger
+                    users_list.innerHTML = `<div class="uk-alert-primary" uk-alert>
+                    <a class="uk-alert-close" uk-close></a>
+                    <p>Congratulations! ${data.added_user.name} has been successfully added to your movie night!</p>
+                    </div>`
+                
+            })
         })
 
         let cardTitle = document.getElementsByTagName('h3')[0]
@@ -99,3 +107,8 @@ function editPage(data, user, time){
 
         // debugger
 }
+
+`<div class="uk-alert-primary" uk-alert>
+<a class="uk-alert-close" uk-close></a>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+</div>`
