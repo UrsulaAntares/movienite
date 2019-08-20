@@ -112,7 +112,3 @@ function editPage(data, user, time){
         // debugger
 }
 
-`<div class="uk-alert-primary" uk-alert>
-<a class="uk-alert-close" uk-close></a>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-</div>`
