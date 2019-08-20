@@ -59,6 +59,7 @@ function showMovie(movie, user, context) {
 } 
 
 function createInterest(movie, user, stars, hearts, context) {
+    main.innerHTML = ''
     event.preventDefault()
 
     data = {movie_id: movie.id, user_id: parseInt(window.localStorage.current_user_id), 

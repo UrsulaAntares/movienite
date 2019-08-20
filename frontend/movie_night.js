@@ -16,14 +16,17 @@ function movieNight(e, user, movieContainer){
         </div>
     </div>
     <div class="uk-card-body">
-    <form>
         <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-        <label><input class="uk-checkbox" type="checkbox" checked> A</label>
-        <label><input class="uk-checkbox" type="checkbox"> B</label>
-        <label<=><input type="submit"></label>
-    </form>
-    </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+        
+        <form class="uk-search uk-search-default" id="add_user">
+            <input class="uk-search-input" type="search" placeholder="Name your movie night...">
+            <input id="users" class="uk-search-input" type="search" placeholder="Start with a friend...">
+            <input type="submit">
+        </form>
+        
+        
+        </div>
+        <p id="users_list">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
     </div>
     <div class="uk-card-footer uk-card-primary">
         <a href="#" class="uk-button uk-button-text">Click here to see your Movie!</a>
@@ -31,6 +34,30 @@ function movieNight(e, user, movieContainer){
 </div>
 </div>`
 let context = "frontPage-rating"
+
+let users_list = document.getElementById('users_list')
+let inputField = document.getElementById('users')
+
+let userForm = document.getElementById('add_user')
+    userForm.addEventListener('submit', (e) => createMovieNight(e, user, users_list))
+
+
+
+
+}
+
+function createMovieNight(e, user, users_list){
+    let nightName = e.target[0].value.trim()
+    let addedUser = e.target[1].value.trim()
+    obj = {night: nightName, friend: addedUser, user: user}
+    fetch("http://localhost:3000/nights", {
+        method: "POST",
+        headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+        body: JSON.stringify(obj)
+    })
+    
+    
+
 
 
 }
