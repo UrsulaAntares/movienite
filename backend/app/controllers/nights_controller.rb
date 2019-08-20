@@ -1,5 +1,12 @@
 class NightsController < ApplicationController
 
+    def show
+        night = Night.find(params[:id].to_i)
+        render json: night.to_json(
+            :include => {:users => {:only => [:username, :id]}},
+            :except => [:created_at, :updated_at]
+            )
+    end
 
     def create 
         creator_id = params[:user][:simple_user_data][:id]
@@ -18,15 +25,4 @@ class NightsController < ApplicationController
     end 
 
 
-
-
-    def show
-        night = Night.find(params[:id].to_i)
-        render json: night.to_json(
-            :include => {:users => {:only => [:username, :id]}},
-            :except => [:created_at, :updated_at]
-            )
-
-
-    end
 end

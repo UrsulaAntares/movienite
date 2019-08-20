@@ -44,7 +44,7 @@ function compareInterests(e, night){
             // nominationHash[319].forEach(interest => console.log(interest.heart))
             // we STILL NEED TO make this go through the hash for each move night; the below is just run on one movie
             
-            function findAverages(movieInterestSet, night){
+            function findScores(movieInterestSet, night){
                 let totalStars = 0
                 let totalHearts = 0
                 let numberUsersInterested = movieInterestSet.length
@@ -54,16 +54,32 @@ function compareInterests(e, night){
                     totalHearts += interest.heart
                 }) 
                 let averageStarsInterested = totalStars/numberUsersInterested
-                let averageStarsAttending = totalStars/numberUsersInterested 
+                let averageStarsAttending = totalStars/numberUsersAttending 
                 //thse two averages are different since not ever user may ahve an interest
                 let averageHeartsInterested = totalHearts/numberUsersInterested
                 let averageHeartsAttending = totalHearts/numberUsersAttending
-                debugger
+                // debugger
+                // return averageStarsAttending
+                return {averageStarsAttending: averageStarsAttending}
             }
             
-            findAverages(nominationHash[319], night)
+            // for (var property1 in object1) {
+            //     string1 += object1[property1];
+            //   }
 
-            debugger
+            // findScores(nominationHash[319], night)
+            scoresHash = {}
+            for (var property1 in nominationHash) {
+                // debugger
+                scoresHash[property1] =  findScores(nominationHash[property1], night)
+            }
+            console.log(scoresHash)
+
+            var max = 0, x, topStarMovie_id;
+                for(var x in scoresHash) {
+                    if( scoresHash[x]["averageStarsAttending"] > max){max = scoresHash[x]["averageStarsAttending"]; topStarMovie_id = x}
+                }
+            console.log(`the most interesting movie for this group is ${topStarMovie_id}`)
         })
        
         
