@@ -11,7 +11,7 @@ function getMoviesToRate(user) {
 
     fetch("http://localhost:3000/movies")
     .then(res => res.json())
-    .then((allMovies) => compareMovies(current_user, allMovies, movieContainer))
+    .then((allMovies) => findUnratedMovies(current_user, allMovies, movieContainer))
     main.append(movieContainer)
     console.log("Hey, we ran the thing")
 }
@@ -75,8 +75,8 @@ function createInterest(movie, user, stars, hearts, context) {
     console.log("you tried to rate a movie")
     
 }
-
-function compareMovies(user, allMovies){
+//this used to be named compareMovies but that got confusing when we built comparison logic
+function findUnratedMovies(user, allMovies){
     let currentUserId = parseInt(window.localStorage.getItem('current_user_id'))
     let context = "frontPage-rating"
         

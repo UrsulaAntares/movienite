@@ -80,7 +80,11 @@ function validateUser(e, form, main){
 		goRateLink.addEventListener('click', (e) => getMoviesToRate(user)) 
 		myMoviesLink.addEventListener('click', (e) => renderMovies(e, user))
 		createMovieNightLink.addEventListener('click', (e) => movieNight(e, user))
-		//these used to take in movieContainer but that's not useful here -- can be created/passed elsewhere
+		logicLink.addEventListener('click', (e) => compareInterests(e))
+		 //the above listener can/may take in an argument of movienight or default to
+		 // a users's last movienight; currently leaving this off since this function will 
+		 // change as we make the choosing options more complicated and call this function 
+		 // on different events
 
 		window.localStorage.setItem('current_user_id', user.simple_user_data.id);
 		window.localStorage.setItem('current_username', user.simple_user_data.username);
