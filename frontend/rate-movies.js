@@ -1,5 +1,6 @@
 
-function getMoviesToRate(main, user) {
+function getMoviesToRate(user) {
+    // e.preventDefault()
     console.log("successfully got to next page")
     main.innerHTML = ""
     movieContainer = document.createElement("div")
@@ -71,7 +72,7 @@ function createInterest(movie, user, stars, hearts, context) {
         body: JSON.stringify(data)
     }).then(res => res.json())
     .then(res => console.log(res))
-    if (context == "frontPage-rating") {getMoviesToRate(main, user)}
+    if (context == "frontPage-rating") {getMoviesToRate(user)}
     console.log("you tried to rate a movie")
     
 }
