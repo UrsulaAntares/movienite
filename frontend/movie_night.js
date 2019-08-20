@@ -16,6 +16,7 @@ function movieNight(e, user, movieContainer){
         </div>
     </div>
     <div class="uk-card-body">
+        <h4 id="subtitle">Tell us about your special night! </h4>
         <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
         
         <form class="uk-search uk-search-default" id="add_user">
@@ -100,6 +101,9 @@ function editPage(data, user, time){
 
         let cardTitle = document.getElementsByTagName('h3')[0]
             cardTitle.innerText = `${data.night.name}`
+
+        let newTitle = document.getElementById('subtitle')
+            newTitle.innerText = "Add some friends to join the party!"
 
         
         
