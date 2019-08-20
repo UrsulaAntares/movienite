@@ -76,14 +76,15 @@ function validateUser(e, form, main){
         body: JSON.stringify(username)
     }).then(r => r.json()).then(user => {
 		
-		
+		console.log("adding event listener to myMoviesLink")
+		goRateLink.addEventListener('click', (e) => getMoviesToRate(user)) 
 		myMoviesLink.addEventListener('click', (e) => renderMovies(e, user))
 		createMovieNightLink.addEventListener('click', (e) => movieNight(e, user))
 		//these used to take in movieContainer but that's not useful here -- can be created/passed elsewhere
 
 		window.localStorage.setItem('current_user_id', user.simple_user_data.id);
 		window.localStorage.setItem('current_username', user.simple_user_data.username);
-		getMoviesToRate(main, user)})
+		getMoviesToRate(user)})
 
 
 
