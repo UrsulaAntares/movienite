@@ -1,7 +1,7 @@
 function movieNight(e, user, movieContainer){
     main.innerHTML = " "
     main.innerHTML = `
-    <div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade uk-background-secondary" uk-height-viewport>
+    <div class="uk-section  uk-flex uk-flex-middle uk-animation-fade " uk-height-viewport>
     
     <div class="uk-card uk-card-default uk-card-large uk-card-default uk-width-1-2@m uk-position-center">
     <div class="uk-card-header">

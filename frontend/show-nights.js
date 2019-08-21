@@ -24,8 +24,15 @@ function renderNights(user) {
 function nightCard(night) {
   //////////////////////////////////////////////////////////////////////
   let nightCard = document.createElement("div");
+  let cardHeader = document.createElement("div");
+  let cardTitle = document.createElement("h3")
   let cardFooter = document.createElement("div");
+  let cardIcon = document.createElement("img");
+  cardIcon.classList.add("icon")
+  cardIcon.src = "images/little-film.png"
+  cardHeader.classList.add("uk-card-header")
   cardFooter.classList.add("answer", "answer-footer");
+  cardTitle.classList.add("uk-card-title", "uk-margin-remove-bottom")
   nightCard.classList.add(
     "uk-card",
     "uk-card-default",
@@ -39,8 +46,9 @@ function nightCard(night) {
   // instead of appending to main...append to the container which is the image
 
   
-  nightCard.innerText = night.name;
-  nightCard.append(cardFooter);
+  cardTitle.innerText = night.name;
+  cardHeader.append(cardIcon, cardTitle)
+  nightCard.append(cardHeader, cardFooter);
   //   backgroundImageContainer.prepend(nightCard); ////////////nightCard
   compareInterests(night, "onACard", cardFooter);
   main.prepend(nightCard)
