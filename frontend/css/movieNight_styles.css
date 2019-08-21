@@ -1,6 +1,6 @@
 img.movie-pic {
     width: 100px;
-    height: 100px;
+    height: 120px;
     object-fit: cover;
     float:left;
     margin: 0 20px 0 0; 
@@ -8,10 +8,22 @@ img.movie-pic {
 }
 
 div.answer {
-    text-align: center;
+    /* text-align: center; */
     padding: 20px;
-    color: #2687f0;
-    background: #2687f01a;
+    /* color: #2687f0; */
+    color: #063777;
+    background:#b5aab354
+}
+
+.answer h4{color: #063777;}
+
+.answer h5.answer-header {
+    font-style: oblique;
+    padding-left: 10px;
+    margin: -20px -20px -26px;
+    background-color: #68107d;
+    border-bottom: solid 1px #130f1d1a;
+    color: #ffffffba;
 }
 
 div.urs-card {
@@ -30,6 +42,7 @@ div#page {
     background: url(../images/color_blur.jpg);
     min-height: 720px;
     background-size: cover;
+    background-position-x: 72%;
 }
 
 
@@ -43,3 +56,10 @@ img.icon {
 .urs-card div.uk-card-header h3 {
     display:inline;
 } 
+
+table.scores-data{
+    text-align: center;
+    font-size: .78em;
+    /* vertical-align: top; */
+    
+}
