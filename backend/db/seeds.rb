@@ -3,10 +3,11 @@ require 'json'
 # require'ap'
 # require 'pry'
 
-API_BASE_URL="https://api.themoviedb.org/3/trending/all/day?api_key=d58a8cfa0b1932711fc5fc8dda7ee621"
-
+API_BASE_URL_DAY="https://api.themoviedb.org/3/trending/all/day?api_key=d58a8cfa0b1932711fc5fc8dda7ee621"
+API_BASE_URL_WEEK="https://api.themoviedb.org/3/trending/all/week?api_key=d58a8cfa0b1932711fc5fc8dda7ee621"
+Movie.destroy_all
 def get_movies
-    response = RestClient.get(API_BASE_URL)
+    response = RestClient.get(API_BASE_URL_DAY)
     json = JSON.parse(response.body)
     results_arr = json['results']
     results_arr.each do |movie_obj| 
@@ -14,6 +15,7 @@ def get_movies
         new_movie = Movie.create(genre: Faker::Book.genre, length: Faker::Number.between(from: 1, to: 200), title: movie_obj['title'], image_url: "https://image.tmdb.org/t/p/w500#{image}")
 
     end 
+
     
 end
 

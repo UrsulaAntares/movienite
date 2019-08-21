@@ -1,45 +1,55 @@
 img.movie-pic {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    float:left;
-    margin: 0 20px 0 0; 
-    object-position: top;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  float: left;
+  margin: 0 20px 0 0;
+  object-position: top;
 }
 
 div.answer {
-    text-align: center;
-    padding: 20px;
-    color: #2687f0;
-    background: #2687f01a;
+  text-align: center;
+  padding: 20px;
+  color: #2687f0;
+  background: #2687f01a;
 }
 
 div.urs-card {
-    margin: 10px auto;
-    /* max-width: 50%; */
-    max-width: 600px;
-    padding: 0; /* this is to counteract/accomodate the uk-card to use their card classes w/o templating entirely*/
+  margin: 10px auto;
+  /* max-width: 50%; */
+  max-width: 600px;
+  padding: 0; /* this is to counteract/accomodate the uk-card to use their card classes w/o templating entirely*/
 }
 
 div#main {
-    margin-top: 20px;
-    
+  margin-top: 20px;
 }
 
 div#page {
-    background: url(../images/color_blur.jpg);
-    min-height: 720px;
-    background-size: cover;
+  background: url(../images/color_blur.jpg);
+  min-height: 720px;
+  background-size: cover;
 }
 
-
 img.icon {
-    width: 40px;
-    height: 40px;
-    float:left;
-    margin-right: 20px;
-} 
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-right: 20px;
+}
 
 .urs-card div.uk-card-header h3 {
-    display:inline;
-} 
+  display: inline;
+}
+
+div#login {
+  background: url(../images/blue_green.jpeg);
+  min-height: 720px;
+  background-size: cover;
+}
+
+div#movies {
+  background: url(../images/pruple_blur_gradient.jpeg);
+  min-height: 720px;
+  background-size: cover;
+}
