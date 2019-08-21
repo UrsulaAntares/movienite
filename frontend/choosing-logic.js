@@ -99,7 +99,18 @@ function compareInterests(night, context, placeForAnswer) {
             answerFooter.innerText = answer;
         } else if (context == "onACard") {
             let scoresDataDiv = document.createElement("div")
-            scoresDataDiv.innerText = `Movie ID: ${topStarMovie_id} Average Stars: ${scoresHash[parseInt(topStarMovie_id)]['averageStarsAttending']}`
+            scoresDataDiv.innerHTML = `<table class="scores-data">
+            
+            <tr>
+                <td>Movie ID: ${topStarMovie_id}</td> 
+                <td>Average Stars: ${scoresHash[parseInt(topStarMovie_id)]['averageStarsAttending']} </td>
+                <td>Average Hearts: ${scoresHash[parseInt(topStarMovie_id)]['averageHeartsAttending']} </td>
+                <td>Star Strength: ${scoresHash[parseInt(topStarMovie_id)]['averageStarsInterested']} </td>
+                <td>Heart Strength: ${scoresHash[parseInt(topStarMovie_id)]['averageHeartsInterested']} </td>
+                <td>Interested Guests: ${scoresHash[parseInt(topStarMovie_id)]['numberUsersInterested']}/${scoresHash[parseInt(topStarMovie_id)]['numberUsersAttending']} </td>
+            </tr>
+                </table>
+                `
             placeForAnswer.innerText = answer;
             placeForAnswer.append(scoresDataDiv)
             debugger
@@ -131,5 +142,13 @@ function findScores(movieInterestSet, night) {
     let averageHeartsAttending = totalHearts / numberUsersAttending;
 
     // the below hash can and should have more data in it but it's at least already the structure the end needs
-    return { averageStarsAttending: averageStarsAttending };
+    return { averageStarsAttending: averageStarsAttending, 
+            totalStars: totalStars, 
+            totalHearts: totalHearts, 
+            numberUsersInterested: numberUsersInterested,
+            numberUsersAttending: numberUsersAttending,
+            averageStarsInterested: averageStarsInterested,
+            averageHeartsAttending: averageHeartsAttending,
+            averageHeartsInterested: averageHeartsInterested,
+        };
   }
