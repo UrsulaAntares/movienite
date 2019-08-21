@@ -15,12 +15,44 @@ div.answer {
     background:#b5aab354
 }
 
+#logo {max-height: 150px;}
+
+.uk-navbar-container.uk-margin.uk-navbar{
+    background-color: #0f1750;
+    color: #FFFFFF;
+    background-image: url(../images/header_background_bricks.png);
+    background-size: cover;
+}
+
+.uk-margin {
+    margin-bottom: 0px;
+}
+
+.uk-navbar-container.uk-margin.uk-navbar a{
+    font-size: 1.3em;
+    color: #90e8fb;
+    transition: background 1s, box-shadow 1s;
+}
+
+.uk-navbar-container.uk-margin.uk-navbar a:hover{
+    box-shadow: #83ebfb3b 0px 0px 30px 8px;
+    text-decoration: none;
+    background: #90e8fb2e;  
+}
+
+.uk-navbar-container.uk-margin.uk-navbar a:active{
+    box-shadow: #fff1983b 0px 0px 30px 8px;
+    text-decoration: none;
+    background: #fff19821;
+    color: #fff198;
+}
+
 .answer h4{color: #063777;}
 
 .answer h5.answer-header {
     font-style: oblique;
     padding-left: 10px;
-    margin: -20px -20px -26px;
+    margin: -20px -20px 10px;
     background-color: #68107d;
     border-bottom: solid 1px #130f1d1a;
     color: #ffffffba;
