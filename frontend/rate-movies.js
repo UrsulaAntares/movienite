@@ -27,7 +27,7 @@ function showMovie(movie, user, context) {
     movieTitle.innerText =  movie.title 
     movieTitle.classList.add('uk-card-title')
     aMovie.append(moviePic, movieTitle)
-    aMovie.classList.add('uk-card', 'uk-card-default', 'uk-card-body', 'uk-width-1-2@m')
+    aMovie.classList.add('uk-card', 'uk-card-default', 'uk-card-body', 'uk-width-1-2@m', 'urs-card')
     
     const movieRatingsContainer = document.createElement("div")
     const movieRatingForm = document.createElement("form")
@@ -42,6 +42,7 @@ function showMovie(movie, user, context) {
     hearts.name = "hearts"
     if (context != "frontPage-rating") {
         if (user.movies.includes(movie)){ console.log("Yes, this is one of our movies")}
+        debugger
         let interest = movie.interests.filter(el => el.user_id == user.id)[0]
         hearts.value = interest.heart
         stars.value =interest.star

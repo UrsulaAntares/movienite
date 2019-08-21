@@ -78,9 +78,10 @@ function validateUser(e, form, main){
 		
 		console.log("adding event listener to myMoviesLink")
 		goRateLink.addEventListener('click', (e) => getMoviesToRate(user)) 
-		myMoviesLink.addEventListener('click', (e) => renderMovies(e, user))
+		myMoviesLink.addEventListener('click', () => renderMovies(user))
 		createMovieNightLink.addEventListener('click', (e) => movieNight(e, user))
-		logicLink.addEventListener('click', (e) => compareInterests(e))
+		logicLink.addEventListener('click', (e) => compareInterests(undefined,"topNav"))
+		myNightsLink.addEventListener('click', () => renderNights(user))
 		 //the above listener can/may take in an argument of movienight or default to
 		 // a users's last movienight; currently leaving this off since this function will 
 		 // change as we make the choosing options more complicated and call this function 
