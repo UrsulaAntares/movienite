@@ -74,7 +74,11 @@ function compareInterests(night, context, placeForAnswer) {
         fetch(`http://localhost:3000/movies/${movie_id}`)
             .then(res => res.json())
             .then(movie => {
-                let movieInfoAnswer = movie.title
+                let movieInfoAnswer = `
+                <h5 class="answer-header">You should watch:</h5>
+                <img class="movie-pic thumbnail" src="${movie.image_url}">
+                <h4 style="display:inline">${movie.title}</h4>
+                `
                 // debugger
                 outputAnswer(movieInfoAnswer, placeForAnswer)
             })
@@ -101,22 +105,28 @@ function compareInterests(night, context, placeForAnswer) {
             let scoresDataDiv = document.createElement("div")
             scoresDataDiv.innerHTML = `<table class="scores-data">
             
+            <theader>
+                <td>Movie ID</td> 
+                <td>Average Stars</td>
+                <td>Average Hearts</td>
+                <td>Star Strength</td>
+                <td>Heart Strength</td>
+                <td>Interested Guests</td>
+            </theader>
+
+
             <tr>
-                <td>Movie ID: ${topStarMovie_id}</td> 
-                <td>Average Stars: ${scoresHash[parseInt(topStarMovie_id)]['averageStarsAttending']} </td>
-                <td>Average Hearts: ${scoresHash[parseInt(topStarMovie_id)]['averageHeartsAttending']} </td>
-                <td>Star Strength: ${scoresHash[parseInt(topStarMovie_id)]['averageStarsInterested']} </td>
-                <td>Heart Strength: ${scoresHash[parseInt(topStarMovie_id)]['averageHeartsInterested']} </td>
-                <td>Interested Guests: ${scoresHash[parseInt(topStarMovie_id)]['numberUsersInterested']}/${scoresHash[parseInt(topStarMovie_id)]['numberUsersAttending']} </td>
+                <td>${topStarMovie_id}</td> 
+                <td>${scoresHash[parseInt(topStarMovie_id)]['averageStarsAttending']} </td>
+                <td>${scoresHash[parseInt(topStarMovie_id)]['averageHeartsAttending']} </td>
+                <td>${scoresHash[parseInt(topStarMovie_id)]['averageStarsInterested']} </td>
+                <td>${scoresHash[parseInt(topStarMovie_id)]['averageHeartsInterested']} </td>
+                <td>${scoresHash[parseInt(topStarMovie_id)]['numberUsersInterested']}/${scoresHash[parseInt(topStarMovie_id)]['numberUsersAttending']} </td>
             </tr>
                 </table>
                 `
-            placeForAnswer.innerText = answer;
+            placeForAnswer.innerHTML = answer;
             placeForAnswer.append(scoresDataDiv)
-            debugger
-        } else if (answerFooter != undefined) {
-            let answerFooter = document.getElementById("answer-footer");
-            answerFooter.innerText = `The answer is: Movie# ${topStarMovie_id}`;
         } 
     }
     
@@ -135,11 +145,11 @@ function findScores(movieInterestSet, night) {
       totalStars += interest.star;
       totalHearts += interest.heart;
     });
-    let averageStarsInterested = totalStars / numberUsersInterested;
-    let averageStarsAttending = totalStars / numberUsersAttending;
+    let averageStarsInterested = Math.ceil(totalStars / numberUsersInterested);
+    let averageStarsAttending = Math.ceil(totalStars / numberUsersAttending);
     //thse two averages are different since not ever user may ahve an interest
-    let averageHeartsInterested = totalHearts / numberUsersInterested;
-    let averageHeartsAttending = totalHearts / numberUsersAttending;
+    let averageHeartsInterested = Math.ceil(totalHearts / numberUsersInterested);
+    let averageHeartsAttending = Math.ceil(totalHearts / numberUsersAttending);
 
     // the below hash can and should have more data in it but it's at least already the structure the end needs
     return { averageStarsAttending: averageStarsAttending, 

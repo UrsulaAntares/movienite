@@ -50,8 +50,7 @@ function tweakLoginPage() {
   )[0];
   loginTitle.innerText = "Welcome to Movie Night! <LOGO HERE>";
 
-  let other = document.getElementById("page"); ///////////////////////////
-  other.id = "login"; //////////////////////////
+  //////////////////////////
 
   let inputPassword = document.getElementsByClassName(
     "uk-input uk-form-large"

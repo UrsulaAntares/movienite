@@ -3,8 +3,6 @@ function renderMovies(user) {
   let context;
   let current_user_id = window.localStorage.getItem("current_user_id");
   main.innerHTML = " ";
-  let other = document.getElementById("page");
-  other.id = "movies";
 
   fetch(`http://localhost:3000/users/${current_user_id}`)
     .then(r => r.json())
