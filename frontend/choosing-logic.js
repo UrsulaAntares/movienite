@@ -75,7 +75,7 @@ function compareInterests(night, context, placeForAnswer) {
             .then(res => res.json())
             .then(movie => {
                 let movieInfoAnswer = `
-                <h5 class="answer-header">You should watch:<h5>
+                <h5 class="answer-header">You should watch:</h5>
                 <img class="movie-pic thumbnail" src="${movie.image_url}">
                 <h4 style="display:inline">${movie.title}</h4>
                 `
