@@ -15,9 +15,17 @@ div.answer {
 }
 
 div.urs-card {
-    margin: auto;
+    margin: 10px auto;
+    /* max-width: 50%; */
+    max-width: 600px;
 }
 
-main {
+div#main {
     margin-top: 20px;
+    
+}
+
+div#page {
+    background: url(../images/color_blur.jpg);
+    min-height: 720px;
 }

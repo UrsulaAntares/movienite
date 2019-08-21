@@ -12,7 +12,7 @@
 
 //the below function defaults to users' most recent movienight -- but takes in night argument
 function compareInterests(night, context, placeforanswer) {
-    debugger
+    // debugger
   //context does not seem to come in consistently
   //it is intentionally not supplied everywhere BUT when I supply it on the movie_night addUser click
   //it does not show up ehre which messes up the else if

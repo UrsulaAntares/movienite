@@ -8,9 +8,9 @@
 function renderNights(user) {
   main.innerText = "";
 
-  main.innerHTML = `<div id="bkg" class="uk-height-large uk-flex uk-flex-center uk-flex-middle uk-background-cover" data-src="images/color_blur.jpg" uk-img uk-height-viewport>
-  
-  </div>`;
+//   main.innerHTML = `<div id="bkg" class="uk-height-large uk-flex uk-flex-center uk-flex-middle uk-background-cover" data-src="images/color_blur.jpg" uk-img uk-height-viewport>
+// </div>`;
+  main.innerHTML = ``
 
   console.log("running renderNights");
   fetch(`http://localhost:3000/users/${user.simple_user_data.id}`)
@@ -34,15 +34,17 @@ function nightCard(night) {
     "urs-card"
   );
 
-  let backgroundImageContainer = document.getElementById("bkg");
-  backgroundImageContainer.appendChild(nightCard);
+//   let backgroundImageContainer = document.getElementById("bkg");
+//   backgroundImageContainer.appendChild(nightCard);
   // instead of appending to main...append to the container which is the image
 
+  
   nightCard.innerText = night.name;
   nightCard.append(cardFooter);
-  backgroundImageContainer.prepend(nightCard); ////////////nightCard
+  //   backgroundImageContainer.prepend(nightCard); ////////////nightCard
   compareInterests(night, "onACard", cardFooter);
-  //same not-passing-arguments problem on both onACard (the context) and the cardFooter ()location
+  main.prepend(nightCard)
+  
 }
 
 {
