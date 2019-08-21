@@ -1,5 +1,6 @@
 function getMoviesToRate(user) {
   // e.preventDefault()
+
   console.log("successfully got to next page");
   main.innerHTML = "";
   movieContainer = document.createElement("div");

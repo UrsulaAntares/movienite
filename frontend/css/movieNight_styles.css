@@ -27,15 +27,14 @@ div.answer {
 }
 
 div.urs-card {
-    margin: 10px auto;
-    /* max-width: 50%; */
-    max-width: 600px;
-    padding: 0; /* this is to counteract/accomodate the uk-card to use their card classes w/o templating entirely*/
+  margin: 10px auto;
+  /* max-width: 50%; */
+  max-width: 600px;
+  padding: 0; /* this is to counteract/accomodate the uk-card to use their card classes w/o templating entirely*/
 }
 
 div#main {
-    margin-top: 20px;
-    
+  margin-top: 20px;
 }
 
 div#page {
@@ -45,15 +44,28 @@ div#page {
     background-position-x: 72%;
 }
 
-
 img.icon {
-    width: 40px;
-    height: 40px;
-    float:left;
-    margin-right: 20px;
-} 
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-right: 20px;
+}
 
 .urs-card div.uk-card-header h3 {
+  display: inline;
+}
+
+div#login {
+  background: url(../images/blue_green.jpeg);
+  min-height: 720px;
+  background-size: cover;
+}
+
+div#movies {
+  background: url(../images/pruple_blur_gradient.jpeg);
+  min-height: 720px;
+  background-size: cover;
+}
     display:inline;
 } 
 
