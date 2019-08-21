@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_15_205255) do
+ActiveRecord::Schema.define(version: 2019_08_20_224649) do
 
-  create_table "interests", force: :cascade do |t| 
+  create_table "interests", force: :cascade do |t|
     t.integer "heart"
     t.integer "star"
     t.integer "user_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2019_08_15_205255) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "date"
   end
 
   create_table "users", force: :cascade do |t|

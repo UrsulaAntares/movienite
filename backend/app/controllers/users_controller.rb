@@ -22,7 +22,7 @@ class UsersController < ApplicationController
             },
          :movies => {:only => [:genre, :id, :image_url, :length, :title],
          :include => {
-            :interests => {:only => [:user_id, :heart, :star, :movie_id]},
+            :interests => {:except => [:created_at, :updated_at]},
             }, 
     }},
     :except => [:updated_at, :created_at] )

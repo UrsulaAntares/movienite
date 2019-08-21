@@ -13,6 +13,8 @@ API_BASE_URL="https://api.themoviedb.org/3/trending/all/day?api_key=d58a8cfa0b19
 #         } 
 # end
 
+
+User.destroy_all
 Movie.destroy_all
 Interest.destroy_all
 Night.destroy_all
@@ -23,12 +25,13 @@ end
 # genre, length , title, imageurl
 
 # movies = Movie.create([ {title: "Mars Attacks!"}, {title: "Hudsucker Proxy"}]  )
-# users = User.create([{name: "Ursula", username: "Urs"}, {name: "Kolton", username: "KStarr"},{name: "Frank", username: "frank"},{name: "Angela", username: "Angie"}])
+users = User.create([{name: "Ursula", username: "Urs"}, {name: "Kolton", username: "KStarr"},{name: "Frank", username: "frank"},{name: "Angela", username: "Angie"}])
 # nights = Night.create([{name:"We have a projector"}, {name: "We have a couch"}, {name: "Matt's movie night"}])
 
-# 40.times  {Interest.create(heart: rand(0..100), star: rand(0..100), user_id: User.all.sample.id, movie_id: Movie.all.sample.id ) }
 
-# 10.times  {Join.create([user: User.all.sample, night: Night.all.sample])}
+40.times  {Interest.create(heart: rand(0..100), star: rand(0..100), user_id: User.all.sample.id, movie_id: Movie.all.sample.id ) }
+
+10.times  {Join.create([user: User.all.sample, night: Night.all.sample])}
 
 # 10.times  {Join.create([user: User.all.sample, night: Night.all.sample])}
 
