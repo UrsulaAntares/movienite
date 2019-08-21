@@ -12,13 +12,14 @@
 
 //the below function defaults to users' most recent movienight -- but takes in night argument
 function compareInterests(night, context, placeforanswer) {
+    debugger
   //context does not seem to come in consistently
   //it is intentionally not supplied everywhere BUT when I supply it on the movie_night addUser click
   //it does not show up ehre which messes up the else if
   let nightUsers = [];
   let thisNight = {};
   // debugger
-  function getScoresForNight(night, context) {
+  function getScoresForNight(night, context, placeforanswer) {
     let allNominations = []; //all interests of users in the group
     nightUsers.push(night.users);
     // let ownersInterests = night.users[0].interests
@@ -87,11 +88,9 @@ function compareInterests(night, context, placeforanswer) {
       // search "uponUserAddition" on novie_night.js to see
     } else if (context == "onACard") {
       console.log("This was definitely on a card");
-      if (cardFooter) {
-        cardFooter.innerText = `The answer is: Movie# ${topStarMovie_id}`;
-      } else {
-        console.log("I give up. If arguments aren't passing, I give up.");
-      }
+      
+        placeforanswer.innerText = `The answer is: Movie# ${topStarMovie_id}`;
+      
     } else {
       // debugger
       console.log(
@@ -120,7 +119,7 @@ function compareInterests(night, context, placeforanswer) {
         getScoresForNight(night, "topNav");
       });
   } else {
-    getScoresForNight(night);
+    getScoresForNight(night, context, placeforanswer);
     console.log("night is pre-defined");
   }
 }
