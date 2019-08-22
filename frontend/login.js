@@ -14,8 +14,8 @@ function renderLoginPage(main) {
 		<div class="uk-container">
 			<div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
 				<div class="uk-width-1-1@m">
-					<div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
-						<h3 class="uk-card-title uk-text-center">Welcome back!</h3>
+					<div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large" style="background:black;     top: -80px;">
+						<h3 class="uk-card-title uk-text-center" style="color:white; margin: 0 0px -39px 0;"  >Welcome back!</h3>
 						<form>
 							<div class="uk-margin">
 								<div class="uk-inline uk-width-1-1">
@@ -44,11 +44,17 @@ function renderLoginPage(main) {
 </div>`;
 }
 
+<<<<<<< HEAD
 function tweakLoginPage() {
   let loginTitle = document.getElementsByClassName(
     "uk-card-title uk-text-center"
   )[0];
   loginTitle.innerText = "Welcome to Movie Night! <LOGO HERE>";
+=======
+function tweakLoginPage(){
+    let loginTitle = document.getElementsByClassName("uk-card-title uk-text-center")[0]
+        loginTitle.innerHTML = `Welcome to Movie Night! <br><img src="images/couch-logo.jpg">`
+>>>>>>> couchstylin
 
   //////////////////////////
 

@@ -95,12 +95,12 @@ function compareInterests(night, context, placeForAnswer) {
         if (context == "topNav") {
             // this topAnswerBar might be best case for a variable defined in a more global scope (not global but close to top)
             let topAnswerBar = document.getElementById("top-answer");
-            topAnswerBar.innerText = answer;
+            topAnswerBar.innerHTML = answer;
             // this option has been removed from the navbar so this can go away
         } else if (context == "uponUserAddition") {
         
             let answerFooter = document.getElementById("answer-footer");
-            answerFooter.innerText = answer;
+            answerFooter.innerHTML = answer;
         } else if (context == "onACard") {
             let scoresDataDiv = document.createElement("div")
             scoresDataDiv.innerHTML = `<table class="scores-data">
