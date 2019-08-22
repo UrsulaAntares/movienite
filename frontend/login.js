@@ -44,17 +44,9 @@ function renderLoginPage(main) {
 </div>`;
 }
 
-<<<<<<< HEAD
-function tweakLoginPage() {
-  let loginTitle = document.getElementsByClassName(
-    "uk-card-title uk-text-center"
-  )[0];
-  loginTitle.innerText = "Welcome to Movie Night! <LOGO HERE>";
-=======
 function tweakLoginPage(){
     let loginTitle = document.getElementsByClassName("uk-card-title uk-text-center")[0]
         loginTitle.innerHTML = `Welcome to Movie Night! <br><img src="images/couch-logo.jpg">`
->>>>>>> couchstylin
 
   //////////////////////////
 
