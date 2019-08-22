@@ -91,7 +91,7 @@ function createInterest(movie, user, stars, hearts, context) {
     .then(res => console.log(res));
   if (context == "frontPage-rating") {
     getMoviesToRate(user);
-  }
+  } else {renderMovies(user)}
   console.log("you tried to rate a movie");
 }
 //this used to be named compareMovies but that got confusing when we built comparison logic
