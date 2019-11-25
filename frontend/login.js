@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
   tweakLoginPage();
   let form = document.getElementsByTagName("form")[1]; // change back to 1
   form.addEventListener("submit", e => validateUser(e, form, main));
-  // debugger
-  // myMoviesLink.addEventListener('click', (e) => renderMovies(e, user, movieContainer))
-  // createMovieNightLink.addEventListener('click', (e) => movieNight(e, user, movieContainer))
+
 });
 
 function renderLoginPage(main) {
